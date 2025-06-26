@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "User Activity Tracker",
+    "version": "1.0",
+    "description": "Tracks clicks and inputs on any website.",
+    "permissions": ["storage", "scripting", "activeTab"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_start"
+      }
+    ]
+  }
+  
